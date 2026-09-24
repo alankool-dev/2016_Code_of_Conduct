@@ -18,7 +18,7 @@ Import this repository into Vercel. Framework: Other. Output directory: public. 
 
 ## Supabase
 
-The public guide reads the `behaviour_guides` table from a separate Supabase project. Only a publishable key is placed in `public/config.json`; never use a secret or service-role key. Anonymous access is read-only. No player information or acknowledgements are collected. Edit guide text in the Supabase dashboard; updates appear on the next page load.
+The public guide is prepared to read the `behaviour_guides` table from a separate Supabase project. Database creation is pending the organisation and cost confirmation; the current deployment uses the labelled saved draft. Only a publishable key is placed in `public/config.json`; never use a secret or service-role key. Anonymous access is read-only. No player information or acknowledgements are collected. Edit guide text in the Supabase dashboard; updates appear on the next page load.
 
 If the live data cannot be reached, the site explicitly displays its saved review draft from `public/guide.json`.
 
@@ -28,4 +28,4 @@ If the live data cannot be reached, the site explicitly displays its saved revie
 - https://www.stpaulsartanefc.com/child-safeguarding-statement
 - https://www.stpaulsartanefc.com/social-media-and-photo-policy
 
-The colour scheme and SP monogram are presentation choices, not an official club crest. Club approval is required before removing the review labels.
+Brand assets (St Pauls crest, O’Neills and Shelbourne logos) are reused from the club’s Identify Fixture App task. Navy, blue, typography and partner presentation match that club identity. Club approval is required before removing the review labels.
