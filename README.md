@@ -1,6 +1,6 @@
 # St. Pauls Artane FC — Behaviour Guide
 
-A mobile-friendly guide for schoolboy players and coaches. Player text adapts the club's published code with practical reminders for younger players. Parents and guardians are encouraged to read it with their child. Coaching expectations are a proposed draft for club review.
+A mobile-friendly guide for schoolboy players and coaches. Player text adapts the club's published code with practical reminders for younger players. Parents and guardians are encouraged to read it with their child. Expectations appear beside the introduction on wider screens and directly after a compact introduction on mobile.
 
 ## Run locally
 
@@ -22,9 +22,9 @@ Run `node --test scripts/build-info.test.mjs` to verify metadata handling. Run `
 
 ## Supabase
 
-The public guide is prepared to read the `behaviour_guides` table from a separate Supabase project. Database creation is pending the organisation and cost confirmation; the current deployment uses the labelled saved draft. Only a publishable key is placed in `public/config.json`; never use a secret or service-role key. Anonymous access is read-only. No player information or acknowledgements are collected. Edit guide text in the Supabase dashboard; updates appear on the next page load.
+The public guide is prepared to read the `behaviour_guides` table from a separate Supabase project. Database creation is pending the organisation and cost confirmation; the current deployment uses the bundled schoolboy guide. Only a publishable key is placed in `public/config.json`; never use a secret or service-role key. Anonymous access is read-only. No player information or acknowledgements are collected. Edit guide text in the Supabase dashboard; updates appear on the next page load.
 
-If the live data cannot be reached, the site explicitly displays its saved review draft from `public/guide.json`.
+If the live data cannot be reached, the site explicitly displays its saved guide from `public/guide.json`.
 
 ## Content sources
 
@@ -32,4 +32,4 @@ If the live data cannot be reached, the site explicitly displays its saved revie
 - https://www.stpaulsartanefc.com/child-safeguarding-statement
 - https://www.stpaulsartanefc.com/social-media-and-photo-policy
 
-Brand assets (St Pauls crest, O’Neills and Shelbourne logos) are reused from the club’s Identify Fixture App task. Navy, blue, typography and partner presentation match that club identity. Club approval is required before removing the review labels.
+Brand assets (St Pauls crest, O’Neills and Shelbourne logos) are reused from the club’s Identify Fixture App task. Navy, blue, typography and partner presentation match that club identity. The application links to the full club policies.

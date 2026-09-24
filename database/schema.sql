@@ -14,27 +14,63 @@ insert into public.behaviour_guides (role, intro, review_note, behaviours) selec
   {
     "role": "player",
     "intro": "Try your best, be kind and enjoy playing with your teammates.",
-    "review_note": "Schoolboy player guide — adapted from the club’s code, with practical reminders for younger players. Prepared for club review. Ask a parent or guardian to help if anything is unclear; the full club policy below takes precedence.",
+    "review_note": "Ask a parent or guardian to help if anything is unclear. Read this guide alongside the full club policies below.",
     "behaviours": [
-      {"title":"Be a good teammate","description":"Include everyone. Encourage your teammates, especially after a mistake. No name-calling, bullying or leaving someone out."},
-      {"title":"Listen and ask questions","description":"Listen when your coach is explaining. If you don’t understand, ask. Tell your coach or a trusted adult if you are hurt, worried or need a break."},
-      {"title":"Play fair and stay calm","description":"Follow the rules and respect the referee. Don’t argue, push or hit. If you feel angry, step away and ask your coach for help."},
-      {"title":"Try your best","description":"Keep trying, even when something is difficult. Mistakes help us learn. Celebrate good play by both teams and thank your opponents after the match."},
-      {"title":"Be ready for football","description":"Ask your parent or guardian to help you arrive on time with your kit, shin pads and water. Tell your coach before leaving training or a match."},
-      {"title":"Be kind off the pitch too","description":"Look after the pitch and equipment. Be respectful in team chats. Tell a trusted adult if a message or someone’s behaviour makes you uncomfortable."}
+      {
+        "title": "Be a good teammate",
+        "description": "Include everyone. Encourage your teammates, especially after a mistake. No name-calling, bullying or leaving someone out."
+      },
+      {
+        "title": "Listen and ask questions",
+        "description": "Listen when your coach is explaining. If you don’t understand, ask. Tell your coach or a trusted adult if you are hurt, worried or need a break."
+      },
+      {
+        "title": "Play fair and stay calm",
+        "description": "Follow the rules and respect the referee. Don’t argue, push or hit. If you feel angry, step away and ask your coach for help."
+      },
+      {
+        "title": "Try your best",
+        "description": "Keep trying, even when something is difficult. Mistakes help us learn. Celebrate good play by both teams and thank your opponents after the match."
+      },
+      {
+        "title": "Be ready for football",
+        "description": "Ask your parent or guardian to help you arrive on time with your kit, shin pads and water. Tell your coach before leaving training or a match."
+      },
+      {
+        "title": "Be kind off the pitch too",
+        "description": "Look after the pitch and equipment. Be respectful in team chats. Tell a trusted adult if a message or someone’s behaviour makes you uncomfortable."
+      }
     ]
   },
   {
     "role": "coach",
     "intro": "Help every schoolboy player feel safe, included and confident to learn.",
-    "review_note": "Proposed schoolboy coaching expectations — awaiting club approval. Follow the club’s existing safeguarding, supervision and reporting procedures; this guide does not replace them.",
+    "review_note": "Follow the club’s safeguarding, supervision and reporting procedures. Read this guide alongside the full club policies below.",
     "behaviours": [
-      {"title":"Put the child before the result","description":"Prioritise enjoyment, wellbeing and development. Never pressure a child to play through pain or distress. Listen when a player needs help or a break."},
-      {"title":"Encourage learning","description":"Use short, age-appropriate instructions and demonstrations. Praise effort, teamwork and improvement. Never ridicule a child, shout abuse or punish mistakes."},
-      {"title":"Include every player","description":"Adapt sessions to different ages, abilities and needs. Give each child meaningful opportunities to participate. Explain selection and playing-time expectations clearly to families."},
-      {"title":"Set the example","description":"Stay calm with referees, opponents and parents. Challenge bullying and discrimination. Show players how to handle disappointment and celebrate fairly."},
-      {"title":"Work with parents and guardians","description":"Share arrangements through club-approved channels. Be clear about arrival, collection and supervision. Follow club procedures if a child has not been collected."},
-      {"title":"Keep children safe","description":"Follow club safeguarding rules for supervision, messages and photographs. Keep appropriate boundaries with children. Record and report concerns through the club’s safeguarding process; do not investigate them yourself."}
+      {
+        "title": "Put the child before the result",
+        "description": "Prioritise enjoyment, wellbeing and development. Never pressure a child to play through pain or distress. Listen when a player needs help or a break."
+      },
+      {
+        "title": "Encourage learning",
+        "description": "Use short, age-appropriate instructions and demonstrations. Praise effort, teamwork and improvement. Never ridicule a child, shout abuse or punish mistakes."
+      },
+      {
+        "title": "Include every player",
+        "description": "Adapt sessions to different ages, abilities and needs. Give each child meaningful opportunities to participate. Explain selection and playing-time expectations clearly to families."
+      },
+      {
+        "title": "Set the example",
+        "description": "Stay calm with referees, opponents and parents. Challenge bullying and discrimination. Show players how to handle disappointment and celebrate fairly."
+      },
+      {
+        "title": "Work with parents and guardians",
+        "description": "Share arrangements through club-approved channels. Be clear about arrival, collection and supervision. Follow club procedures if a child has not been collected."
+      },
+      {
+        "title": "Keep children safe",
+        "description": "Follow club safeguarding rules for supervision, messages and photographs. Keep appropriate boundaries with children. Record and report concerns through the club’s safeguarding process; do not investigate them yourself."
+      }
     ]
   }
 ]

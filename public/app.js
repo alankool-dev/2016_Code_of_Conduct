@@ -59,9 +59,11 @@ async function readJson(url, options = {}) {
 }
 
 async function init() {
+  let connected = false;
   try {
     const config = await readJson('/config.json');
     if (!config.supabaseUrl || !config.publishableKey) throw new Error('Not connected');
+    connected = true;
     const live = await readJson(`${config.supabaseUrl}/rest/v1/behaviour_guides?select=role,intro,review_note,behaviours&order=role`, {
       headers: { apikey: config.publishableKey }
     });
@@ -73,7 +75,7 @@ async function init() {
       const fallback = await readJson('/guide.json');
       if (!validGuides(fallback)) throw new Error('Incomplete guide');
       guides = fallback;
-      status.textContent = 'Live updates are unavailable. Showing the saved review draft.';
+      status.textContent = connected ? 'Live updates are unavailable. Showing the saved guide.' : '';
     } catch {
       status.textContent = 'The guide could not be loaded. Please try again or use the club policy links below.';
       container.setAttribute('aria-busy', 'false');
