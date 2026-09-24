@@ -1,6 +1,6 @@
 # St. Pauls Artane FC — Behaviour Guide
 
-A mobile-friendly guide for players and coaches. Player text summarises the club's published code; coach expectations are a proposed draft for club review.
+A mobile-friendly guide for schoolboy players and coaches. Player text adapts the club's published code with practical reminders for younger players. Parents and guardians are encouraged to read it with their child. Coaching expectations are a proposed draft for club review.
 
 ## Run locally
 
@@ -14,7 +14,11 @@ Open http://127.0.0.1:4173. Run `node scripts/check.mjs` for content and configu
 
 ## Deployment
 
-Import this repository into Vercel. Framework: Other. Output directory: public. No build or install command is needed.
+Import this repository into Vercel. Framework: Other. The committed vercel.json runs validation and the build script, then publishes dist. No dependencies or install step are needed.
+
+Each build inserts `Build YYYY.MM.DD · Git <short SHA>` into the footer. The date uses Europe/Dublin time; the commit comes from VERCEL_GIT_COMMIT_SHA and links to the full GitHub commit. Keep Vercel's system environment variables enabled. Production builds fail if this metadata is unavailable rather than displaying an invented reference. Local builds are labelled Local preview.
+
+Run `node --test scripts/build-info.test.mjs` to verify metadata handling. Run `node scripts/build.mjs` to generate the static output in dist. The source public/index.html retains its placeholder so every rebuild receives fresh metadata.
 
 ## Supabase
 

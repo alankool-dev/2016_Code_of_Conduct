@@ -1,1 +1,1 @@
-{"name":"st-pauls-behaviour-guide","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node scripts/serve.mjs","check":"node scripts/check.mjs"}}
+{"name":"st-pauls-behaviour-guide","version":"1.1.0","private":true,"type":"module","scripts":{"start":"node scripts/serve.mjs","build":"node scripts/build.mjs","check":"node scripts/check.mjs","test":"node --test scripts/build-info.test.mjs"}}

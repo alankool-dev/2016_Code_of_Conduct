@@ -17,3 +17,5 @@ footer{padding-top:30px;padding-bottom:30px;background:#073858;align-items:cente
 @media(max-width:800px){.intro{gap:25px}.values{padding:22px}.values p{font-size:27px}footer{gap:28px}}
 @media(max-width:520px){.site-header{height:98px}.club{font-size:12px;gap:10px;letter-spacing:.015em}.club-crest{width:48px;height:61px}.club-sub{font-size:10px;letter-spacing:.08em}.club-link{font-size:12px}.intro{padding:27px 0}h1{font-size:42px;line-height:1.08}.intro-text{font-size:16px}.values{display:none}h2{font-size:27px}.behaviour{padding:22px}.support h2{font-size:24px}footer{align-items:flex-start}.partners{width:100%;gap:16px;justify-content:flex-start}.partner-image{width:139px}.footer-club strong{font-size:12px}}
 @media print{.partners{display:none}}
+
+.support p:not(.eyebrow){margin:12px 0 0;max-width:650px;color:var(--muted);font-size:15px;line-height:1.7}#build-reference{font-size:12px;font-weight:400;letter-spacing:0;line-height:1.7;overflow-wrap:anywhere}
