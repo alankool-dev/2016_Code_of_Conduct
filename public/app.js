@@ -3,6 +3,7 @@ let selectedRole = location.hash === '#coach' ? 'coach' : 'player';
 const container = document.querySelector('#behaviours');
 const status = document.querySelector('#content-status');
 const buttons = [...document.querySelectorAll('[data-role]')];
+const selections = { player: 0, coach: 0 };
 
 export function validGuides(value) {
   return Array.isArray(value) && ['player', 'coach'].every(role => {
@@ -20,25 +21,65 @@ function render() {
   document.querySelector('#role-intro').textContent = guide.intro;
   document.querySelector('#role-count').textContent = `${guide.behaviours.length} shared expectations`;
   document.querySelector('#review-note').textContent = guide.review_note;
-  container.replaceChildren(...guide.behaviours.map((item, index) => {
-    const article = document.createElement('article');
-    article.className = 'behaviour';
-    const top = document.createElement('div');
-    top.className = 'card-top';
-    top.setAttribute('aria-hidden', 'true');
+  const list = document.createElement('div');
+  list.className = 'expectation-list';
+  list.setAttribute('role', 'tablist');
+  list.setAttribute('aria-label', 'Choose an expectation');
+  list.setAttribute('aria-orientation', 'vertical');
+  const detail = document.createElement('article');
+  detail.className = 'expectation-detail';
+  detail.id = 'expectation-detail';
+  detail.setAttribute('role', 'tabpanel');
+  detail.tabIndex = 0;
+  const counter = document.createElement('p');
+  counter.className = 'eyebrow';
+  const title = document.createElement('h3');
+  const description = document.createElement('p');
+  description.className = 'expectation-description';
+  detail.append(counter, title, description);
+  const tabs = guide.behaviours.map((item, index) => {
+    const tab = document.createElement('button');
+    tab.type = 'button';
+    tab.className = 'expectation-tab';
+    tab.id = `expectation-${selectedRole}-${index}`;
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-controls', detail.id);
     const number = document.createElement('span');
     number.className = 'number';
+    number.setAttribute('aria-hidden', 'true');
     number.textContent = String(index + 1).padStart(2, '0');
-    const line = document.createElement('span');
-    line.className = 'card-line';
-    top.append(number, line);
-    const title = document.createElement('h3');
+    const label = document.createElement('span');
+    label.textContent = item.title;
+    tab.append(number, label);
+    tab.addEventListener('click', () => select(index));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowDown') next = (index + 1) % tabs.length;
+      if (event.key === 'ArrowUp') next = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      select(next);
+      tabs[next].focus();
+    });
+    return tab;
+  });
+  function select(index) {
+    selections[selectedRole] = index;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+    });
+    const item = guide.behaviours[index];
+    detail.setAttribute('aria-labelledby', tabs[index].id);
+    counter.textContent = `Expectation ${index + 1} of ${tabs.length}`;
     title.textContent = item.title;
-    const description = document.createElement('p');
     description.textContent = item.description;
-    article.append(top, title, description);
-    return article;
-  }));
+  }
+  list.append(...tabs);
+  container.replaceChildren(list, detail);
+  select(Math.min(selections[selectedRole], tabs.length - 1));
   container.setAttribute('aria-busy', 'false');
 }
 
